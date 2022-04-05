@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>7 задание</title>
+	<style>
+		.box1 {
+			background-color: red;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 200px;
+			left: 300px;
+			transition: 1s
+		}
+		.box2 {
+			background-color: blue;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 200px;
+			left: 600px;
+			transition: 1s
+		}
+		.box3 {
+			background-color: yellow;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 200px;
+			left: 900px;
+			transition: 1s
+		}
+		.box4 {
+			background-color: pink;
+
+			background-size: 100% 100%;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 500px;
+			left: 300px;
+			transition: 1s
+		}
+		.box5 {
+			background-color: purple;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 500px;
+			left: 600px;
+			transition: 1s
+		}
+		.box6 {
+			background-color: orange;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 500px;
+			left: 900px;
+			transition: 1s
+		}
+	</style>
+</head>
+<body class="body" style="font-family: arial; background-color: #171717">
+	<!-- див с красным фоном -->
+	<h1 style="color:pink; margin-right: auto; text-align: center;">	Где розовый?</h1>
+	<h3 style="text-align: center; color: white">Осталось попыток: <span class="text"></span></h3>
+	<button class="btn" style="width: 100px; height: 30px; border-radius: 10px;  border:none;  margin-left: 46%">Перемешать</button>
+	<div class="main" >
+		<div style="display: flex">	
+			<div class="box1 box">
+			</div>
+			<div class="box2 box">
+			</div>
+			<div class="box3 box">
+			</div>
+
+		</div>
+		<div style="display: flex">	
+			<div class="box4">
+			</div>
+			<div class="box5 box">
+			</div>
+			<div class="box6 box">
+			</div>
+
+		</div>
+		
+	</div>
+
+	<script type="text/javascript">
+		// Создай переменную для попыток attempts, которая содержит значение 2. Выведи ее значение во внутрь тега span. 
+		let att = 3;
+		document.querySelector(".text").innerHTML = att;
+			
+
+		
+		// Сделай нажатие на кнопку 
+		document.querySelector(".btn").onclick = function(){
+			document.querySelector(".box1").style.left = 900 + "px";
+			document.querySelector(".box2").style.left = 600 + "px";
+			document.querySelector(".box3").style.left = 300 + "px";
+			document.querySelector(".box4").style.left = 900 + "px";
+			document.querySelector(".box5").style.left = 300 + "px";
+			document.querySelector(".box6").style.left = 600 + "px";
+
+			document.querySelector(".box4").style.top = 200 + "px";
+			document.querySelector(".box1").style.top = 500 + "px";
+			document.querySelector(".box5").style.top = 200 + "px";
+			document.querySelector(".box2").style.top = 500 + "px";
+			document.querySelector(".box3").style.top = 500 + "px";
+			document.querySelector(".box6").style.top = 200 + "px";
+
+			document.querySelector(".box1").style.background="white";
+			document.querySelector(".box2").style.background="white";
+			document.querySelector(".box3").style.background="white";
+			document.querySelector(".box4").style.background="white";
+			document.querySelector(".box5").style.background="white";
+			document.querySelector(".box6").style.background="white";
+
+		}
+
+
+		document.querySelector(".box4").onclick = function(){
+			alert("Молодец");
+			document.querySelector(".main").style.display = "none";
+
+		}
+		
+		
+		
+		document.querySelector(".box1").onclick = function(){
+			att = att - 1;
+			document.querySelector(".text").innerHTML = att;
+			document.querySelector(".box1").style.background = "red";
+			if(att == 0) {
+			alert("Ооо нет(");
+			document.querySelector(".main").style.display = "none";
+		}
+		
+		}
+		document.querySelector(".box2").onclick = function(){
+			att = att - 1;
+			document.querySelector(".text").innerHTML = att;
+			document.querySelector(".box2").style.background = "blue";
+			if(att == 0) {
+			alert("Ооо нет(");
+			document.querySelector(".main").style.display = "none";
+		}
+		
+		}
+		document.querySelector(".box3").onclick = function(){
+			att = att - 1;
+			document.querySelector(".text").innerHTML = att;
+			document.querySelector(".box3").style.background = "yellow";
+			if(att == 0) {
+			alert("Ооо нет(");
+			document.querySelector(".main").style.display = "none";
+		}
+		
+		}
+
+
+
+		document.querySelector(".box5").onclick = function(){
+			att = att - 1;
+			document.querySelector(".text").innerHTML = att;
+			document.querySelector(".box5").style.background = "purple";
+			if(att == 0) {
+			alert("Ооо нет(");
+			document.querySelector(".main").style.display = "none";
+		}
+		
+		}
+		document.querySelector(".box6").onclick = function(){
+			att = att - 1;
+			document.querySelector(".text").innerHTML = att;
+			document.querySelector(".box6").style.background = "orange";
+			if(att == 0) {
+			alert("Ооо нет(");
+			document.querySelector(".main").style.display = "none";
+		}
+
+		
+		}
+		
+
+
+		
+
+
+		// Когда нажимаешь на кнопку элементы меняются местами, див перекрасить в черный
+		// Когда нажимаешь на див на спанч боба выводится сообщение молодец 
+		// Когда нажимаешь на див на сквидворда попытки -1, если попытки равны нулю то ты проиграл
+		// При победе или при проигрыши все дивы скрываются
+	</script>
+</body>
+</html>
